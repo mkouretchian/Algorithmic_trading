@@ -14,7 +14,7 @@ import time
 import alpaca_trade_api as tradeapi
 
 def main():
-    ticker = 'GOOGL'
+    ticker = 'HD'
     max_results = 100
     end_point = constants.end_point
     BEARERTOKEN = constants.BEARERTOKEN

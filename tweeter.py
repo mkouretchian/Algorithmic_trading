@@ -68,9 +68,12 @@ class tweet():
         print(df.columns)
         for tweet in df['text'].to_list():
             sentence = flair.data.Sentence(tweet)
-            sentiment_model.predict(sentence)
-            probs.append(sentence.labels[0].score)
-            sentiments.append(sentence.labels[0].value)
+            if sentence == None :
+                pass
+            else:
+                sentiment_model.predict(sentence)
+                probs.append(sentence.labels[0].score)
+                sentiments.append(sentence.labels[0].value)
         df['probs'] = probs
         df['sentiments'] = sentiments
         
